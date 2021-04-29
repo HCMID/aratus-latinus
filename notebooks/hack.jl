@@ -31,10 +31,8 @@ begin
 	using EditionBuilders
 	using EditorsRepo
 	using HTTP
-	using Lycian
 	using Markdown
 	using Orthography
-	using PolytonicGreek
 	Pkg.status()
 end
 
@@ -371,10 +369,20 @@ end
 # Compose markdown for one row of display interleaving citable
 # text passage and indexed image.
 function mdForDseRow(row::DataFrameRow)
+		#CitableText.rangebegin(row.passage) |> CitableText.dropsubref
+	trimmed = ""
+	if CitableText.isrange(row.passage)
+		psgval =  CitableText.rangebegin(row.passage) |> CitableText.dropsubref
+		trimmed = CitableText.addpassage(row.passage, psgval)
+		
+	else
+		trimmed = row.passage
+	end
 	citation = "**" * passagecomponent(row.passage)  * "** "
 
-	
-	txt = diplnode(row.passage, editorsrepo())
+
+#	txt = diplnode(row.passage, editorsrepo())
+	txt = diplnode(trimmed, editorsrepo())
 	caption = passagecomponent(row.passage)
 	
 	img = linkedMarkdownImage(ict(), row.image, iiifsvc(), w, caption)
