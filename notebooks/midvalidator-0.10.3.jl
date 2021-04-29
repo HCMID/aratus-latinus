@@ -39,7 +39,7 @@ begin
 end
 
 # ╔═╡ 5495ea1c-7b56-11eb-39ed-d1078b0808b0
-md"> ## Cataloging"
+md"> ## Validation: cataloging"
 
 # ╔═╡ c8c4f0a0-7b50-11eb-0be9-27b71bddbc9f
 html"""
@@ -52,21 +52,6 @@ html"""
 
 # ╔═╡ 1e9d6620-78f3-11eb-3f66-7748e8758e08
 @bind loadem Button("Load/reload data")
-
-# ╔═╡ 493a315c-78f2-11eb-08e1-137d9a802802
-begin
-	loadem
-	nbversion = Pkg.TOML.parse(read("Project.toml", String))["version"]
-	md"""
-	## Validating notebook
-	
-	- How to edit: see the [MID handbook](https://hcmid.github.io/tutorial2021/)
-	- Version: this is version **$(nbversion)** of the MID validation notebook.
-	
-	
-	
-	"""
-end
 
 # ╔═╡ 4aacb152-79b2-11eb-349a-cfe86f526399
 begin
@@ -569,7 +554,6 @@ end
 
 # ╔═╡ Cell order:
 # ╟─d859973a-78f0-11eb-05a4-13dba1f0cb9e
-# ╟─493a315c-78f2-11eb-08e1-137d9a802802
 # ╟─4aacb152-79b2-11eb-349a-cfe86f526399
 # ╟─5495ea1c-7b56-11eb-39ed-d1078b0808b0
 # ╟─6a94c362-7b59-11eb-2a6f-77375afae47e
