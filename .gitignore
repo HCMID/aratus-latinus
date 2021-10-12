@@ -1,3 +1,4 @@
 Manifest.toml
 *.~
 scratch/
+settings.json
