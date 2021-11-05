@@ -270,7 +270,7 @@ function orthography()
 			title = worktitle(catalog, row.passage)
 			
 			#chunks = normednodetext(editorsrepo(), row.passage) |> split
-			chunks = graphemes(normalized_passagetext(editorsrepo(), row.passage)) |> collect
+			chunks = graphemes(normalized_passagetext(editorsrepo(), tidy)) |> collect
 			html = []
 			for chunk in chunks
 				push!(html, formatToken(ortho, chunk))
@@ -347,10 +347,10 @@ function accuracyView(row::DataFrameRow)
 	catalog = textcatalog_df(editorsrepo())
     title 	= worktitle(catalog, row.passage)
 	citation = string("*", title, "*, **" * passagecomponent(row.passage)  * "** ")
-
+	tidy = EditorsRepo.baseurn(row.passage)
 	
-	txt = diplomatic_passagetext(editorsrepo(), row.passage, )
-	caption = passagecomponent(row.passage)
+	txt = diplomatic_passagetext(editorsrepo(), tidy)
+	caption = passagecomponent(tidy)
 	
 	img = linkedMarkdownImage(ict(), row.image, iiifsvc(); ht=w, caption=caption)
 	
