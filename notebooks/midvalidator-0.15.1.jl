@@ -249,9 +249,6 @@ md"""###  Choose a surface to verify
 $(@bind surface Select(surfacemenu(editorsrepo())))
 """
 
-# ╔═╡ 8b7c7cbd-ef65-4043-ad90-1a808c9e2429
-surface
-
 # ╔═╡ 3cb683e2-5350-4262-b693-0cddee340254
 # Compose HTML to display compliance with configured orthography
 function orthography()
@@ -1104,7 +1101,6 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─35255eb9-1f54-4f9d-8c58-2d450e09dff9
 # ╟─617ce64a-d7b1-4f66-8bd0-f7a240a929a7
 # ╟─8d407e7a-1201-4dd3-bddd-368362037205
-# ╠═8b7c7cbd-ef65-4043-ad90-1a808c9e2429
 # ╟─ee2f04c1-42bb-46bb-a381-b12138e550ee
 # ╟─834a67df-8c8b-47c6-aa3e-20297576019a
 # ╟─8fcf792e-71eb-48d9-b0e6-e7e175628ccd
